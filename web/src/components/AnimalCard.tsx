@@ -46,7 +46,8 @@ export default function AnimalCard({
   const noticeUrl = publicNoticeUrl(animal.raw.desertionNo);
 
   return (
-    <article className="animal-card">
+    <article className="animal-card surface-shell">
+      <div className="surface-core animal-card-core">
       <div className="animal-photo" aria-label="보호 동물 사진">
         {animal.photoUrl && !imageFailed ? (
           <img
@@ -55,7 +56,10 @@ export default function AnimalCard({
             src={animal.photoUrl}
           />
         ) : (
-          <span>사진 없음</span>
+          <span className="photo-fallback">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 47c3-10 9-16 14-16s11 6 14 16M20 24c0-5 3-9 7-9 3 0 5 2 5 5 0-3 2-5 5-5 4 0 7 4 7 9 0 8-5 13-12 13s-12-5-12-13Z" /></svg>
+            사진 없음
+          </span>
         )}
       </div>
       <div className="animal-content">
@@ -119,8 +123,12 @@ export default function AnimalCard({
           onClick={onSettlePlan}
           type="button"
         >
-          {isLoadingPlan ? "플랜을 불러오는 중…" : "정착 플랜"}
+          <span>{isLoadingPlan ? "플랜을 불러오는 중" : "정착 플랜"}</span>
+          <span className="button-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+          </span>
         </button>
+      </div>
       </div>
     </article>
   );

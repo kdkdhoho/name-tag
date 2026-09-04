@@ -1,5 +1,6 @@
 import type { MatchOutput } from "../api";
 import AnimalCard from "../components/AnimalCard";
+import Reveal from "../components/Reveal";
 
 interface Props {
   result: MatchOutput;
@@ -22,7 +23,7 @@ export default function ResultScreen({
 }: Props) {
   return (
     <section aria-labelledby="result-title">
-      <div className="screen-heading">
+      <Reveal className="screen-heading">
         <div>
           <h1 id="result-title">추천 결과</h1>
           <p className="lead">공고 정보와 생활 조건을 같이 확인해 보세요.</p>
@@ -30,9 +31,11 @@ export default function ResultScreen({
         <button className="text-button" onClick={onRestart} type="button">
           조건 다시 입력
         </button>
-      </div>
+      </Reveal>
       {result.cards.length === 0 && (
-        <p className="empty-state">현재 조건에 맞는 공고를 찾지 못했습니다.</p>
+        <Reveal delay={80}>
+          <p className="empty-state">현재 조건에 맞는 공고를 찾지 못했습니다.</p>
+        </Reveal>
       )}
       {sections.map((section) => {
         const cards = result.cards.filter(
@@ -42,14 +45,17 @@ export default function ResultScreen({
         return (
           <section className="result-section" key={section.grade}>
             <h2>{section.title}</h2>
-            {cards.map((card) => (
-              <AnimalCard
-                card={card}
-                isLoadingPlan={isLoadingPlan}
-                key={`${card.animal.raw.kindNm}-${card.animal.raw.noticeEdt}`}
-                onSettlePlan={onSettlePlan}
-              />
-            ))}
+            <div className="card-stack">
+              {cards.map((card, index) => (
+                <Reveal delay={index * 70} key={`${card.animal.raw.kindNm}-${card.animal.raw.noticeEdt}`}>
+                  <AnimalCard
+                    card={card}
+                    isLoadingPlan={isLoadingPlan}
+                    onSettlePlan={onSettlePlan}
+                  />
+                </Reveal>
+              ))}
+            </div>
           </section>
         );
       })}

@@ -12,6 +12,7 @@ import {
   type SizeLimit,
   type Tenure,
 } from "../api";
+import Reveal from "../components/Reveal";
 
 interface Props {
   initialProfile: Profile;
@@ -161,9 +162,13 @@ export default function QuestionScreen({
 
   return (
     <section aria-labelledby="question-title">
-      <h1 id="question-title">정착</h1>
-      <p className="lead">생활 조건을 바탕으로 보호소 공고를 함께 살펴봐요.</p>
-      <form className="question-form" onSubmit={submit}>
+      <Reveal>
+        <h1 id="question-title">정착</h1>
+        <p className="lead">생활 조건을 바탕으로 보호소 공고를 함께 살펴봐요.</p>
+      </Reveal>
+      <Reveal delay={80}>
+      <form className="question-form surface-shell" onSubmit={submit}>
+        <div className="surface-core form-core">
         <fieldset>
           <legend>1. 거주 지역</legend>
           <div className="two-columns">
@@ -292,9 +297,14 @@ export default function QuestionScreen({
           />
         </fieldset>
         <button className="primary-button" disabled={isLoading} type="submit">
-          {isLoading ? "추천을 살펴보는 중…" : "추천 보기"}
+          <span>{isLoading ? "추천을 불러오는 중" : "추천 보기"}</span>
+          <span className="button-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+          </span>
         </button>
+        </div>
       </form>
+      </Reveal>
     </section>
   );
 }

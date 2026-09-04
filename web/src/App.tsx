@@ -97,7 +97,9 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <p className="fixture-notice">픽스처 모드</p>
+      <header className="app-header">
+        <p className="brand-mark" aria-label="정착">정착</p>
+      </header>
       {error && (
         <p className="error-message" role="alert">
           {error}
