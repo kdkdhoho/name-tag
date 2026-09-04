@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "nametag": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "build/libs/nametag-0.0.1-SNAPSHOT.jar",
+        "--spring.profiles.active=mcp"
+      ],
+      "env": {
+        "NAMETAG_USE_FIXTURE": "1"
+      }
+    }
+  }
+}
