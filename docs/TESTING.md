@@ -8,7 +8,7 @@ cd /Users/hylee/swm/codex-impact-workshop/nametag
 node scripts/check.mjs
 ```
 
-기대 결과는 마지막 줄 `ALL CHECKS PASSED`다.
+기대 결과는 `REST match: N cards`, `MCP tools: 5/5`, 마지막 줄 `ALL CHECKS PASSED`다. 전체 검사는 fixture 서버를 임시 포트에 직접 기동해 `/api/v1/matches`까지 확인한 후 종료한다.
 
 ## 웹 빌드
 
