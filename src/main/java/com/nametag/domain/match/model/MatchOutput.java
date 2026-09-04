@@ -1,1 +1,9 @@
-package com.nametag.domain.match.model; import java.util.List; public record MatchOutput(boolean landlordDenied,List<MatchCard> cards){ public static MatchOutput landlordDeniedResult(){return new MatchOutput(true,List.of());} }
+package com.nametag.domain.match.model;
+
+import java.util.List;
+
+public record MatchOutput(boolean landlordDenied, List<MatchCard> cards) {
+  public static MatchOutput landlordDeniedResult() {
+    return new MatchOutput(true, List.of());
+  }
+}

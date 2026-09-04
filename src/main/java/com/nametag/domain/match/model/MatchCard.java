@@ -1,1 +1,12 @@
-package com.nametag.domain.match.model; import com.nametag.domain.animal.model.Animal; import java.util.List; public record MatchCard(Animal animal, Grade grade, int score, List<String> flags, List<String> reasons, List<String> questions){}
+package com.nametag.domain.match.model;
+
+import com.nametag.domain.animal.model.Animal;
+import java.util.List;
+
+public record MatchCard(
+    Animal animal,
+    Grade grade,
+    int score,
+    List<String> flags,
+    List<String> reasons,
+    List<String> questions) {}

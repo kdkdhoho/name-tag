@@ -1,1 +1,37 @@
-package com.nametag.domain.evaluate.model; import com.nametag.domain.animal.model.*; import com.nametag.domain.match.model.*; import java.util.*; public final class Evaluator {private Evaluator(){} public static Evaluation evaluate(List<Profile> p,List<RawAnimal> raws){List<Animal>a=raws.stream().map(x->AnimalDeriver.derive(x,2026)).toList();int flags=0,hard=0,ended=0,unsupported=0;Map<String,Integer>g=new LinkedHashMap<>();for(Profile x:p){MatchOutput o=MatchEngine.match(x,a);for(MatchCard c:o.cards()){g.merge(c.grade().name(),1,Integer::sum);if(c.grade()==Grade.GOOD&&!c.flags().isEmpty())flags++;if(!"보호중".equals(c.animal().raw().processState()))ended++;if(!HardFilters.accepts(x,c.animal()))hard++;unsupported+=c.reasons().size()-ReasonValidator.validate(c.reasons(),Scorer.score(x,c.animal()).ruleIds()).size();}}double coverage=raws.isEmpty()?0:100.0*raws.stream().filter(r->r.specialMark()!=null&&!r.specialMark().isBlank()).count()/raws.size();return new Evaluation(p.size(),unsupported,ended,hard,flags,coverage,g,List.of());}}
+package com.nametag.domain.evaluate.model;
+
+import com.nametag.domain.animal.model.*;
+import com.nametag.domain.match.model.*;
+import java.util.*;
+
+public final class Evaluator {
+  private Evaluator() {}
+
+  public static Evaluation evaluate(List<Profile> p, List<RawAnimal> raws) {
+    List<Animal> a = raws.stream().map(x -> AnimalDeriver.derive(x, 2026)).toList();
+    int flags = 0, hard = 0, ended = 0, unsupported = 0;
+    Map<String, Integer> g = new LinkedHashMap<>();
+    for (Profile x : p) {
+      MatchOutput o = MatchEngine.match(x, a);
+      for (MatchCard c : o.cards()) {
+        g.merge(c.grade().name(), 1, Integer::sum);
+        if (c.grade() == Grade.GOOD && !c.flags().isEmpty()) flags++;
+        if (!"보호중".equals(c.animal().raw().processState())) ended++;
+        if (!HardFilters.accepts(x, c.animal())) hard++;
+        unsupported +=
+            c.reasons().size()
+                - ReasonValidator.validate(c.reasons(), Scorer.score(x, c.animal()).ruleIds())
+                    .size();
+      }
+    }
+    double coverage =
+        raws.isEmpty()
+            ? 0
+            : 100.0
+                * raws.stream()
+                    .filter(r -> r.specialMark() != null && !r.specialMark().isBlank())
+                    .count()
+                / raws.size();
+    return new Evaluation(p.size(), unsupported, ended, hard, flags, coverage, g, List.of());
+  }
+}

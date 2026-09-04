@@ -1,6 +1,12 @@
 spring:
   application.name: nametag
   config.import: optional:file:.env[.properties]
+  main.web-application-type: ${NAMETAG_WEB_APPLICATION_TYPE:servlet}
+  main.banner-mode: off
+
 nametag:
   fixture: ${NAMETAG_USE_FIXTURE:true}
   fixture-dir: ${NAMETAG_FIXTURE_DIR:./fixtures}
+  public-api:
+    base-url: ${NAMETAG_PUBLIC_API_BASE_URL:https://apis.data.go.kr/1543061/abandonmentPublicService_v2}
+    service-key: ${DATA_GO_KR_SERVICE_KEY:}

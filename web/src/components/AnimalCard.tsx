@@ -1,0 +1,110 @@
+import { useState } from "react";
+import type { MatchCard } from "../api";
+
+interface Props {
+  card: MatchCard;
+  isLoadingPlan: boolean;
+  onSettlePlan: () => void;
+}
+
+function gradeLabel(card: MatchCard) {
+  if (card.grade === "GOOD") return "잘 맞음";
+  if (card.grade === "CONDITIONAL")
+    return `조건부 · 확인 ${card.flags.length}개`;
+  return "정보 부족";
+}
+
+function deadline(date?: string) {
+  if (!date || !/^\d{8}$/.test(date)) return "마감일 확인 필요";
+  return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)} 마감`;
+}
+
+function reasonSentence(reason: string) {
+  const trimmed = reason.trim();
+  return /[.?!。]$/.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+
+export default function AnimalCard({
+  card,
+  isLoadingPlan,
+  onSettlePlan,
+}: Props) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const { animal } = card;
+  const age = animal.neonate
+    ? "60일 미만"
+    : animal.ageApprox === null
+      ? "나이 확인 필요"
+      : `${animal.ageApprox}세`;
+  const weight = animal.kg === null ? null : `${animal.kg}kg`;
+
+  return (
+    <article className="animal-card">
+      <div className="animal-photo" aria-label="보호 동물 사진">
+        {animal.photoUrl && !imageFailed ? (
+          <img
+            alt="보호 동물"
+            onError={() => setImageFailed(true)}
+            src={animal.photoUrl}
+          />
+        ) : (
+          <span>사진 없음</span>
+        )}
+      </div>
+      <div className="animal-content">
+        <div className="card-title-row">
+          <span className={`badge grade-${card.grade.toLowerCase()}`}>
+            {gradeLabel(card)}
+          </span>
+          <span className="deadline">{deadline(animal.raw.noticeEdt)}</span>
+        </div>
+        <h3>
+          {animal.raw.kindNm} · {age}
+          {weight && ` · ${weight}`}
+        </h3>
+        <div className="badge-list">
+          {animal.adultSizeUnknown && (
+            <span className="badge badge-warning">성견 체중 확인 필요</span>
+          )}
+          {animal.infoLevel === "LACKING" && (
+            <span className="badge badge-lacking">정보 부족</span>
+          )}
+          {card.flags.map((flag) => (
+            <span className="badge badge-warning" key={flag}>
+              {flag}
+            </span>
+          ))}
+        </div>
+        <div className="reason-list">
+          {card.reasons.map((reason) => (
+            <p key={reason}>{reasonSentence(reason)}</p>
+          ))}
+        </div>
+        <div className="question-list">
+          <h4>보호소에 물어볼 것</h4>
+          <ul>
+            {card.questions.map((question) => (
+              <li key={question}>{question}</li>
+            ))}
+          </ul>
+        </div>
+        <p className="shelter-contact">
+          {animal.raw.careNm && <span>{animal.raw.careNm} </span>}
+          {animal.raw.careTel ? (
+            <a href={`tel:${animal.raw.careTel}`}>{animal.raw.careTel}</a>
+          ) : (
+            "전화번호 확인 필요"
+          )}
+        </p>
+        <button
+          className="secondary-button"
+          disabled={isLoadingPlan}
+          onClick={onSettlePlan}
+          type="button"
+        >
+          {isLoadingPlan ? "플랜을 불러오는 중…" : "정착 플랜"}
+        </button>
+      </div>
+    </article>
+  );
+}

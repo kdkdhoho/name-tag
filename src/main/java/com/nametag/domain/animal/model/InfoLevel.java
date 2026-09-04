@@ -1,2 +1,6 @@
 package com.nametag.domain.animal.model;
-public enum InfoLevel { ENOUGH, LACKING }
+
+public enum InfoLevel {
+  ENOUGH,
+  LACKING
+}

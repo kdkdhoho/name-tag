@@ -1,2 +1,22 @@
-package com.nametag.domain.match.model; import com.nametag.domain.animal.model.*; import java.util.*;
-public final class CheckFlags { private CheckFlags(){} public static List<String> of(Profile p,Animal a){ List<String> r=new ArrayList<>(); if(p.housemates().contains(Profile.Housemate.PET)&&a.keywords().contains(Keyword.DOG_UNFRIENDLY))r.add("다른 반려동물과 대면 확인"); if((p.absence()==Profile.Absence.EIGHT_TO_TEN||p.absence()==Profile.Absence.OVER_10)&&a.keywords().contains(Keyword.SEPARATION_ANXIETY))r.add("분리불안 상담"); if(p.housemates().contains(Profile.Housemate.CHILD_UNDER_7)&&a.keywords().contains(Keyword.CAUTION))r.add("아이와 만남 확인"); if(p.expectation()==Profile.Expectation.DAYS&&(a.keywords().contains(Keyword.CAUTION)||a.keywords().contains(Keyword.BARKING)))r.add("적응 기간 기대치 확인"); return r; } }
+package com.nametag.domain.match.model;
+
+import com.nametag.domain.animal.model.*;
+import java.util.*;
+
+public final class CheckFlags {
+  private CheckFlags() {}
+
+  public static List<String> of(Profile p, Animal a) {
+    List<String> r = new ArrayList<>();
+    if (p.housemates().contains(Profile.Housemate.PET)
+        && a.keywords().contains(Keyword.DOG_UNFRIENDLY)) r.add("다른 반려동물과 대면 확인");
+    if ((p.absence() == Profile.Absence.EIGHT_TO_TEN || p.absence() == Profile.Absence.OVER_10)
+        && a.keywords().contains(Keyword.SEPARATION_ANXIETY)) r.add("분리불안 상담");
+    if (p.housemates().contains(Profile.Housemate.CHILD_UNDER_7)
+        && a.keywords().contains(Keyword.CAUTION)) r.add("아이와 만남 확인");
+    if (p.expectation() == Profile.Expectation.DAYS
+        && (a.keywords().contains(Keyword.CAUTION) || a.keywords().contains(Keyword.BARKING)))
+      r.add("적응 기간 기대치 확인");
+    return r;
+  }
+}
