@@ -1,0 +1,1 @@
+package com.nametag.domain.match.model; import com.nametag.domain.animal.model.*; import java.util.*; public final class Grader { private Grader(){} public static Grade grade(Animal a,ScoreResult s,List<String> flags){return a.infoLevel()==InfoLevel.LACKING?Grade.INFO_LACKING:(!flags.isEmpty()||s.score()<0?Grade.CONDITIONAL:Grade.GOOD);} }

@@ -1,0 +1,1 @@
+import {execFileSync} from 'node:child_process'; try{execFileSync('./gradlew',['-q','compileJava','compileTestJava'],{stdio:'pipe'});console.log(JSON.stringify({hookSpecificOutput:{additionalContext:'Java 컴파일 통과'}}));}catch(e){console.log(JSON.stringify({hookSpecificOutput:{additionalContext:String(e.stderr).slice(0,3000)}}));}

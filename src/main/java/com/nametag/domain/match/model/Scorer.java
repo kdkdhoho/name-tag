@@ -1,0 +1,1 @@
+package com.nametag.domain.match.model; import com.nametag.domain.animal.model.Animal; import java.util.*; public final class Scorer { private Scorer(){} public static ScoreResult score(Profile p,Animal a){int score=0;List<String> ids=new ArrayList<>();for(Rule r:Rules.ALL)if(r.when().test(p,a)){score+=r.delta();ids.add(r.id());}return new ScoreResult(score,ids);} }

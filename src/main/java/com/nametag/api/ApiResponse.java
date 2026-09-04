@@ -1,0 +1,1 @@
+package com.nametag.api; import java.time.Instant; public record ApiResponse<T>(int httpStatus,String code,boolean success,String message,T data,Instant timestamp){public static <T> ApiResponse<T> ok(T x){return new ApiResponse<>(200,"OK",true,"성공",x,Instant.now());}}

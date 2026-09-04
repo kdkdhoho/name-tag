@@ -1,0 +1,3 @@
+package com.nametag.domain.match.model;
+import java.util.Set;
+public record Profile(Home home, Limit sizeLimit, Tenure tenure, Absence absence, Set<Housemate> housemates, int activeDays, Experience experience, Expectation expectation, String sido, String sigungu) { public enum Home{HOUSE,APARTMENT,VILLA,STUDIO} public enum Limit{NONE,UNDER_10,UNDER_25,UNKNOWN} public enum Tenure{OWN,RENT_APPROVED,RENT_UNCONFIRMED,RENT_DENIED} public enum Absence{UNDER_2,UNDER_4,FOUR_TO_EIGHT,EIGHT_TO_TEN,OVER_10} public enum Housemate{ALONE,ADULT,CHILD_UNDER_7,SENIOR_65,PET} public enum Experience{NONE,FAMILY,PRIMARY_UNDER_10,PRIMARY_OVER_10} public enum Expectation{DAYS,WEEKS,MONTHS} }

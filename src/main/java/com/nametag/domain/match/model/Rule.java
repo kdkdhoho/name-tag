@@ -1,0 +1,1 @@
+package com.nametag.domain.match.model; import com.nametag.domain.animal.model.Animal; import java.util.function.BiPredicate; public record Rule(String id,BiPredicate<Profile,Animal> when,int delta,String reason){}

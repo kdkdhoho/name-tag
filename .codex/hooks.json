@@ -1,0 +1,1 @@
+{"hooks":{"SessionStart":[{"hooks":[{"type":"command","command":"node .codex/hooks/session-start.mjs","timeout":20}]}],"PostToolUse":[{"matcher":"apply_patch","hooks":[{"type":"command","command":"node .codex/hooks/post-edit-compile.mjs","timeout":60}]}]}}

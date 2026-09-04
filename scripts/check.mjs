@@ -1,0 +1,4 @@
+import { execFileSync, spawnSync } from 'node:child_process';
+import { readFileSync, existsSync } from 'node:fs';
+const run=(cmd,args)=>execFileSync(cmd,args,{stdio:'inherit'});
+try { run('./gradlew',['-q','test','smoke']); const e=JSON.parse(readFileSync('build/evaluation.json')); const ok=e.personas===20&&!e.unsupportedReasons&&!e.endedAnimals&&!e.hardFilterViolations&&!e.goodFlagViolations; if(!ok) throw Error(JSON.stringify(e)); if(process.argv.includes('--quick')) console.log('CHECK 1 PASSED'); else { run('./gradlew',['-q','bootJar']); const p=spawnSync('java',['-jar','build/libs/nametag-0.0.1-SNAPSHOT.jar','--spring.profiles.active=mcp'],{input:'{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n',encoding:'utf8',timeout:20000}); if(p.status!==0||!p.stdout.includes('evaluate_match')) throw Error(p.stderr); console.log('ALL CHECKS PASSED'); }} catch(e){console.error('CHECKS FAILED',e.message);process.exit(1);}

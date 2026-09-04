@@ -1,0 +1,9 @@
+[
+ {"desertionNo":"A01","kindNm":"믹스견","age":"2022(년생)","weight":"8(Kg)","specialMark":"사람좋아함, 순함","processState":"보호중","noticeEdt":"20260920","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/a.jpg","neuterYn":"U","sexCd":"M","orgNm":"서울"},
+ {"desertionNo":"A02","kindNm":"믹스견","age":"2025(60일미만)(년생)","weight":"0,25(Kg)","specialMark":"활발, 에너지","processState":"보호중","noticeEdt":"20260918","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/b.jpg","neuterYn":"U","sexCd":"F","orgNm":"서울"},
+ {"desertionNo":"A03","kindNm":"도사 믹스","age":"2021(년생)","weight":"30(Kg)","specialMark":"온순","processState":"보호중","noticeEdt":"20260921","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/c.jpg","neuterYn":"Y","sexCd":"M","orgNm":"서울"},
+ {"desertionNo":"A04","kindNm":"믹스견","age":"2016(년생)","weight":"11(Kg)","specialMark":"조용하고 사람경계 없음","processState":"보호중","noticeEdt":"20260919","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/d.jpg","neuterYn":"Y","sexCd":"F","orgNm":"서울"},
+ {"desertionNo":"A05","kindNm":"믹스견","age":"2023(년생)","weight":"","specialMark":"","processState":"보호중","noticeEdt":"20260922","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/e.jpg","neuterYn":"U","sexCd":"M","orgNm":"서울"},
+ {"desertionNo":"A06","kindNm":"믹스견","age":"2023(년생)","weight":"18(Kg)","specialMark":"다른 개 싫어함, 짖음","processState":"보호중","noticeEdt":"20260923","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/f.jpg","neuterYn":"U","sexCd":"M","orgNm":"서울"},
+ {"desertionNo":"A07","kindNm":"믹스견","age":"2024(년생)","weight":"7(Kg)","specialMark":"겁이많고 사람을 견제함, 분리불안","processState":"보호중","noticeEdt":"20260924","careNm":"서울 보호소","careTel":"02-111-1111","careAddr":"서울","popfile1":"http://example.test/g.jpg","neuterYn":"U","sexCd":"F","orgNm":"서울"}
+]

@@ -1,0 +1,3 @@
+name = "ui-builder"
+description = "웹 화면 작업"
+developer_instructions = "web/AGENTS.md를 따르고 화면 하나마다 npm run build로 확인한다."

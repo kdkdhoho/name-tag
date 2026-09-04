@@ -1,0 +1,6 @@
+spring:
+  application.name: nametag
+  config.import: optional:file:.env[.properties]
+nametag:
+  fixture: ${NAMETAG_USE_FIXTURE:true}
+  fixture-dir: ${NAMETAG_FIXTURE_DIR:./fixtures}

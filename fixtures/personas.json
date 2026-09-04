@@ -1,0 +1,22 @@
+[
+ {"home":"STUDIO","sizeLimit":"UNDER_10","tenure":"OWN","absence":"UNDER_4","housemates":["ALONE"],"activeDays":3,"experience":"NONE","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"NONE","tenure":"OWN","absence":"EIGHT_TO_TEN","housemates":["PET"],"activeDays":5,"experience":"FAMILY","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"RENT_APPROVED","absence":"UNDER_2","housemates":["ADULT"],"activeDays":4,"experience":"PRIMARY_OVER_10","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"VILLA","sizeLimit":"UNDER_25","tenure":"RENT_UNCONFIRMED","absence":"FOUR_TO_EIGHT","housemates":["SENIOR_65"],"activeDays":2,"experience":"PRIMARY_UNDER_10","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"NONE","tenure":"OWN","absence":"UNDER_4","housemates":["CHILD_UNDER_7"],"activeDays":3,"experience":"FAMILY","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"STUDIO","sizeLimit":"NONE","tenure":"RENT_DENIED","absence":"OVER_10","housemates":["ALONE"],"activeDays":0,"experience":"NONE","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"OWN","absence":"UNDER_2","housemates":["ADULT"],"activeDays":6,"experience":"PRIMARY_OVER_10","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"UNDER_10","tenure":"OWN","absence":"EIGHT_TO_TEN","housemates":["SENIOR_65"],"activeDays":1,"experience":"NONE","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"VILLA","sizeLimit":"NONE","tenure":"RENT_APPROVED","absence":"FOUR_TO_EIGHT","housemates":["PET"],"activeDays":4,"experience":"FAMILY","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"OWN","absence":"UNDER_4","housemates":["ALONE"],"activeDays":2,"experience":"PRIMARY_UNDER_10","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"STUDIO","sizeLimit":"UNDER_25","tenure":"OWN","absence":"OVER_10","housemates":["ADULT"],"activeDays":5,"experience":"FAMILY","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"NONE","tenure":"OWN","absence":"UNDER_2","housemates":["CHILD_UNDER_7"],"activeDays":6,"experience":"PRIMARY_OVER_10","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"RENT_APPROVED","absence":"FOUR_TO_EIGHT","housemates":["SENIOR_65"],"activeDays":3,"experience":"FAMILY","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"VILLA","sizeLimit":"UNDER_10","tenure":"OWN","absence":"UNDER_4","housemates":["PET"],"activeDays":1,"experience":"NONE","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"NONE","tenure":"OWN","absence":"EIGHT_TO_TEN","housemates":["ADULT"],"activeDays":4,"experience":"PRIMARY_UNDER_10","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"OWN","absence":"UNDER_2","housemates":["ALONE"],"activeDays":7,"experience":"PRIMARY_OVER_10","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"STUDIO","sizeLimit":"NONE","tenure":"RENT_APPROVED","absence":"FOUR_TO_EIGHT","housemates":["ADULT"],"activeDays":2,"experience":"FAMILY","expectation":"WEEKS","sido":"서울","sigungu":"강남구"},
+ {"home":"VILLA","sizeLimit":"UNDER_25","tenure":"OWN","absence":"UNDER_4","housemates":["CHILD_UNDER_7"],"activeDays":3,"experience":"NONE","expectation":"DAYS","sido":"서울","sigungu":"강남구"},
+ {"home":"APARTMENT","sizeLimit":"NONE","tenure":"OWN","absence":"OVER_10","housemates":["PET"],"activeDays":5,"experience":"PRIMARY_OVER_10","expectation":"MONTHS","sido":"서울","sigungu":"강남구"},
+ {"home":"HOUSE","sizeLimit":"NONE","tenure":"RENT_APPROVED","absence":"UNDER_2","housemates":["ADULT"],"activeDays":4,"experience":"FAMILY","expectation":"WEEKS","sido":"서울","sigungu":"강남구"}
+]

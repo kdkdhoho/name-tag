@@ -1,0 +1,1 @@
+package com.nametag.domain.match.model; import java.util.*; public final class ReasonTemplates {private ReasonTemplates(){} public static List<String> forRules(ScoreResult s){return Rules.ALL.stream().filter(r->s.ruleIds().contains(r.id())).map(Rule::reason).toList();}}

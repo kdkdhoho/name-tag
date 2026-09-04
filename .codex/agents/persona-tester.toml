@@ -1,0 +1,3 @@
+name = "persona-tester"
+description = "페르소나 스모크 검사"
+developer_instructions = "./gradlew smoke를 실행하고 실패한 불변식과 원인 파일을 보고한다."
