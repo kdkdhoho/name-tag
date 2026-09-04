@@ -25,7 +25,7 @@ npm run build
 
 ```bash
 cd /Users/hylee/swm/codex-impact-workshop/nametag
-NAMETAG_USE_FIXTURE=1 java -jar build/libs/nametag-0.0.1-SNAPSHOT.jar
+NAMETAG_USE_FIXTURE=1 java -jar build/libs/jeongchak-0.0.1-SNAPSHOT.jar
 ```
 
 터미널 B:

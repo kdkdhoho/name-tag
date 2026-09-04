@@ -7,7 +7,7 @@ import com.nametag.domain.match.model.*;
 import java.util.*;
 import org.junit.jupiter.api.*;
 
-@DisplayName("이름표 규칙 엔진")
+@DisplayName("정착 규칙 엔진")
 class RulesTest {
   @Test
   void 체중_파싱_success() {

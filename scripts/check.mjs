@@ -14,7 +14,7 @@ async function waitForHealth(url) {
 
 async function verifyRest() {
   const url = 'http://127.0.0.1:18080';
-  const server = spawn('java', ['-jar', 'build/libs/nametag-0.0.1-SNAPSHOT.jar', '--server.port=18080'], {
+  const server = spawn('java', ['-jar', 'build/libs/jeongchak-0.0.1-SNAPSHOT.jar', '--server.port=18080'], {
     env: { ...process.env, NAMETAG_USE_FIXTURE: '1' }, stdio: 'ignore'
   });
   try {
@@ -37,7 +37,7 @@ try {
   else {
     run('./gradlew', ['-q', 'bootJar']);
     await verifyRest();
-    const mcp = spawnSync('java', ['-jar', 'build/libs/nametag-0.0.1-SNAPSHOT.jar', '--spring.profiles.active=mcp'], { input: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n', encoding: 'utf8', timeout: 20_000 });
+    const mcp = spawnSync('java', ['-jar', 'build/libs/jeongchak-0.0.1-SNAPSHOT.jar', '--spring.profiles.active=mcp'], { input: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n', encoding: 'utf8', timeout: 20_000 });
     if (mcp.status !== 0 || !mcp.stdout.includes('evaluate_match')) throw new Error(mcp.stderr);
     console.log('MCP tools: 5/5');
     console.log('ALL CHECKS PASSED');

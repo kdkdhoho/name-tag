@@ -36,6 +36,7 @@ export interface Region {
 }
 
 export interface RawAnimal {
+  desertionNo?: string;
   kindNm: string;
   noticeEdt?: string;
   careNm?: string;

@@ -35,7 +35,7 @@ public class McpRunner {
                                 "name",
                                 n,
                                 "description",
-                                "이름표 " + n,
+                                "정착 " + n,
                                 "inputSchema",
                                 Map.of("type", "object")))
                     .toList();
@@ -86,7 +86,7 @@ public class McpRunner {
                             "protocolVersion",
                             "2024-11-05",
                             "serverInfo",
-                            Map.of("name", "nametag", "version", "0.1.0"),
+                            Map.of("name", "jeongchak", "version", "0.1.0"),
                             "capabilities",
                             Map.of("tools", Map.of())))));
         }

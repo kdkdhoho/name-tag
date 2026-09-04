@@ -2,7 +2,7 @@
 
 ## 2026-09-04 fixture 리허설
 
-- `NAMETAG_USE_FIXTURE=1 java -jar build/libs/nametag-0.0.1-SNAPSHOT.jar --server.port=8080`로 서버를 기동했다.
+- `NAMETAG_USE_FIXTURE=1 java -jar build/libs/jeongchak-0.0.1-SNAPSHOT.jar --server.port=8080`로 서버를 기동했다.
 - `POST /api/v1/matches`의 기본 요청은 추천 카드 4장을 반환했다.
 - 같은 요청의 `tenure: RENT_DENIED`는 `landlordDenied: true`를 반환했다.
 - 첫 추천 카드에는 보호소 전화번호 `02-111-1111`이 포함됐다.

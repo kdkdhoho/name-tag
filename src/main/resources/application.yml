@@ -1,5 +1,5 @@
 spring:
-  application.name: nametag
+  application.name: jeongchak
   config.import: optional:file:.env[.properties]
   main.web-application-type: ${NAMETAG_WEB_APPLICATION_TYPE:servlet}
   main.banner-mode: off

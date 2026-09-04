@@ -24,6 +24,12 @@ function reasonSentence(reason: string) {
   return /[.?!。]$/.test(trimmed) ? trimmed : `${trimmed}.`;
 }
 
+function publicNoticeUrl(desertionNo?: string) {
+  if (!desertionNo) return null;
+
+  return `https://www.animal.go.kr/front/awtis/public/publicDtl.do?desertionNo=${encodeURIComponent(desertionNo)}&menuNo=1000000055`;
+}
+
 export default function AnimalCard({
   card,
   isLoadingPlan,
@@ -37,6 +43,7 @@ export default function AnimalCard({
       ? "나이 확인 필요"
       : `${animal.ageApprox}세`;
   const weight = animal.kg === null ? null : `${animal.kg}kg`;
+  const noticeUrl = publicNoticeUrl(animal.raw.desertionNo);
 
   return (
     <article className="animal-card">
@@ -96,6 +103,16 @@ export default function AnimalCard({
             "전화번호 확인 필요"
           )}
         </p>
+        {noticeUrl && (
+          <a
+            className="notice-link"
+            href={noticeUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            국가동물보호정보시스템 공고 보기
+          </a>
+        )}
         <button
           className="secondary-button"
           disabled={isLoadingPlan}

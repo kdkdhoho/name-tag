@@ -161,7 +161,7 @@ export default function QuestionScreen({
 
   return (
     <section aria-labelledby="question-title">
-      <h1 id="question-title">이름표</h1>
+      <h1 id="question-title">정착</h1>
       <p className="lead">생활 조건을 바탕으로 보호소 공고를 함께 살펴봐요.</p>
       <form className="question-form" onSubmit={submit}>
         <fieldset>

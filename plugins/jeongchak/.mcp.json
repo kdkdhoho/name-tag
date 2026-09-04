@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "nametag": {
+    "jeongchak": {
       "command": "java",
       "args": [
         "-jar",
-        "build/libs/nametag-0.0.1-SNAPSHOT.jar",
+        "build/libs/jeongchak-0.0.1-SNAPSHOT.jar",
         "--spring.profiles.active=mcp"
       ],
       "env": {

@@ -261,6 +261,16 @@ select {
 .shelter-contact a {
   color: #265d95;
 }
+.notice-link {
+  display: inline-block;
+  margin: -2px 0 12px;
+  color: #265d95;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.notice-link:hover {
+  text-decoration-thickness: 2px;
+}
 .disclaimer {
   margin-top: 34px;
   color: #6c7278;
